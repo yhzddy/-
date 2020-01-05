@@ -1,0 +1,145 @@
+/* pages/detail/detail.wxss */
+
+.container{
+  background: #F8F8F8
+}
+.scroll_container{
+display: flex;
+}
+.scroll_img{
+ width: 40%;
+}
+.scroll_img image{
+  width: 100%;
+ padding: 16rpx;
+}
+.scroll_text{
+ width: 48%;
+ padding: 16rpx;
+}
+
+.text_title{
+  color:#000000;
+  font-weight:bold;
+}
+.text_titleEng{
+  color: #AAAAAA;
+  display: block
+}
+.text_other{
+  color: #AAAAAA;
+  font-size: 22rpx;
+}
+
+.star{
+  float: left;
+}
+.star .img{
+  width:24rpx;
+  height: 26rpx;
+  display: inline-block;
+}
+
+.scroll_summary{
+  display: flex;
+  flex-direction:column;
+  align-items:flex-end;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+
+}
+.conts {
+  font-size: 28rpx;
+  line-height: 50rpx;
+  background-color: #F8F8F8;
+  /*关键属性（必须有的）  */
+  display: -webkit-box;
+}
+
+
+.hide {
+  /*规定子元素的排列方向 */
+  -webkit-box-orient: vertical;
+  /*限制文本显示的行数  */
+  -webkit-line-clamp: 4;
+  /*实现多余的文字隐藏并用省略号来代表被隐藏的文字  */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.showButton{
+  color: #AAAAAA;
+  font-size: 22rpx;
+  padding: 10rpx;
+}
+/*要实现scroll-view 横向  要在scroll父容器上加上scroll-x和css属性white-space: nowrap;
+在父容器的子项目上加上display: inline-block;
+ */
+ .scroll_avatortitle{
+  padding-left: 10rpx;
+  font-weight: bold;
+ }
+.scroll_avator{
+  white-space: nowrap;
+}
+.scroll_box{
+  display: inline-block;
+
+}
+.avator_container{
+  width: 200rpx;
+  padding-top: 10rpx;
+}
+.avator_img{
+  width: 100%;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+
+}
+.avator_name{
+  font-size: 24rpx;
+  text-align:center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10rpx;
+  /* text是行内元素 不能用text-align,你把text标签改成view 或者把text设置display:block. */
+/* 补充下 因为行内元素长度随内容变化，所以他不能让你在一行的中间，因为他的长度就是文字长度。 */
+  display:block;
+}
+.review_title{
+    padding-left: 10rpx;
+  font-weight: bold;
+  padding-bottom: 10rpx;
+}
+.review_box{
+  background-color:#FCFCFC;
+  box-shadow: 2rpx 2rpx 20rpx #bbb9b9;
+  margin-left: 16rpx;
+  margin-right: 16rpx;
+  margin-bottom: 32rpx;
+}
+
+.review_first{
+display: flex;
+align-items: center;
+padding-left: 10rpx;
+padding-top: 10rpx;
+  
+}
+.review_userimg{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  overflow:hidden;
+  /* margin-left: 10rpx;
+  margin-right: 10rpx; */
+  
+}
+
+.review_userinfo{
+  margin-left: 10rpx;
+  font-size: 24rpx;
+}
+.review_summary{
+  font-size: 24rpx;
+  padding: 10rpx;
+}

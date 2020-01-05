@@ -1,0 +1,30 @@
+/* .container{
+  display: flex;
+  padding:5px;
+} */
+.scroll_item{
+  display: flex;
+
+}
+.scroll_img{
+ width: 48%;
+}
+.scroll_img image{
+  width: 100%;
+  padding:5rpx;
+}
+.scroll_text{
+ width: 48%;
+
+}
+
+.scroll_text .text_title{
+  font-size: 22rpx;
+  color:#666666
+
+}
+.scroll_text .text_content{
+  font-size: 22rpx;
+  color:#3377AA
+
+}

@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<!-- 首页容器 -->
+<view class="container">
+<!-- 滚动列表 -->
+<scroll-view scroll-y="true" >
+<navigator class="scroll_item" wx:for="{{movieList}}" wx:key="{{item.id}}" url="../detail/detail?movieid={{item.id}}">
+
+<!-- 图片容器 -->
+<view class="scroll_img"><image src="{{item.images.small}}"></image></view>
+
+<!-- 标题描述 -->
+<view class="scroll_text">
+<view><text>{{item.title}}</text></view>
+<view class="text_title">评分：<text class="text_content">{{item.rating.average}}</text></view>
+<view class="text_title">导演：<text class="text_content" wx:for="{{item.directors}}" wx:for-item="directors" wx:for-index="{{directors.id}}">{{directors.name}}</text></view>
+<view class="text_title">类型：<text class="text_content" wx:for="{{item.genres}}" wx:for-item="genres" wx:for-index="genresid">{{genres}} </text></view>
+<view class="text_title">主演：<text class="text_content" wx:for="{{item.casts}}" wx:for-item="casts" wx:for-index="castsid"> {{casts.name}} </text></view>
+<view class="text_title">上映日期：<text class="text_content" wx:for="{{item.pubdates}}" wx:for-item="pubdates" wx:for-index="pubdatesid"> {{pubdates}} </text></view>
+<view class="text_title">片长：<text class="text_content" wx:for="{{item.durations}}" wx:for-item="durations" wx:for-index="durationsid"> {{durations}} </text></view>
+
+
+</view>
+
+</navigator>
+</scroll-view>
+</view>

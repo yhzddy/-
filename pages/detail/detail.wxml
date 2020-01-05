@@ -1,0 +1,80 @@
+<!--pages/detail/detail.wxml-->
+<!-- 详情页面 -->
+<view class="container">
+<scroll-view scroll-y="true">
+<!-- 标题 -->
+<view class="scroll_container">
+
+<view class="scroll_img">
+<image src="{{movie.images.small}}"></image>
+</view>
+
+<view class="scroll_text">
+<text class="text_title">{{movie.title}}{{movie.year}}</text>
+<text class="text_titleEng">{{movie.original_title}}</text>
+<text class="text_other" wx:for="{{movie.genres}}" wx:for-item="genres" wx:for-index="genresid">{{genres}} </text>
+<text class="text_other">/{{movie.countries[0]}}</text>
+<text class="text_other">/片长:{{movie.durations[0]}}</text>
+
+<view class="star">
+<block wx:for="{{5}}">
+<image class="img" src="../../static/image/yellowstar.png"></image>
+</block>
+<block wx:for="{{grey_star}}">
+<image class="img"  src="../../static/image/greystar.png"></image>
+</block>
+<text class="text_other">{{movie.rating.average}}分</text>
+</view>
+</view>
+
+</view>
+<!-- 简介 -->
+<view class="scroll_summary">
+<text class="conts {{isF?'hide':''}}">{{movie.summary}}</text>
+<text bindtap='showText' class="showButton">{{isF ? '展开' : '收起'}}</text>
+</view>
+<!-- 主演介绍 -->
+<view class="scroll_avatortitle">影人</view>
+<scroll-view scroll-x="true" class="scroll_avator">
+<view class="scroll_box" wx:for="{{movie.casts}}" wx:key="item.id">
+
+<view class="avator_container">
+<image class="avator_img" src="{{item.avatars.small}}" mode="center"></image>
+</view>
+<view>
+<text class="avator_name">{{item.name}}</text>
+<!-- <text>{{}}</text> -->
+</view>
+</view>
+</scroll-view>
+
+<!-- 最佳评论 -->
+<view class="review_title">最佳影评</view>
+<view wx:for="{{movie.popular_reviews}}" wx:key="{{item.id}}">
+<!-- 主要内容 -->
+<view class="review_box">
+<!-- 第一栏 -->
+<view class="review_first">
+<!-- 头像 -->
+<view>
+  <image class="review_userimg" src="{{item.author.avatar}}"></image>
+</view>
+<!-- 个人信息和影评分 -->
+<view class="review_userinfo">
+<text>{{item.author.name}}</text>
+</view>
+</view>
+<!-- 第二栏 -->
+<view class="review_summary">
+<text>{{item.summary}}</text>
+</view>
+<!-- 第三栏 -->
+<view></view>
+</view>
+</view>
+
+</scroll-view>
+
+
+
+</view>
